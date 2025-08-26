@@ -9,14 +9,14 @@ RUN apt update -y && \
 WORKDIR /var/www/html
 
 # Download the actual ZIP file
-ADD https://github.com/awais684/static-zip/raw/refs/heads/master/S3-Static-Website-master.zip site.zip
+#ADD https://github.com/awais684/static-zip/raw/refs/heads/master/S3-Static-Website-master.zip site.zip
 
 # Unzip, copy contents, and clean up
-RUN unzip site.zip -d site && \
-    cp -rvf site/* . && \
-    rm -rf site site.zip
+#RUN unzip site.zip -d site && \
+    #cp -rvf site/* . && \
+    #rm -rf site site.zip
 
-#RUN echo "Hello DevOps Class" > /var/www/html/index.html
+RUN echo "Hello DevOps Class" > /var/www/html/index.html
 
 # Expose Apache port
 EXPOSE 80
