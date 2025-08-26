@@ -3,7 +3,7 @@ FROM public.ecr.aws/ubuntu/ubuntu:22.04
 # Install Apache and required tools
 RUN apt update -y && \
     apt install -y apache2 apache2-utils wget unzip && \
-    apt clean
+    apt clean 
 
 # Set working directory
 WORKDIR /var/www/html
