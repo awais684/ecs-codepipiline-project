@@ -9,7 +9,7 @@ RUN apt update -y && \
 WORKDIR /var/www/html
 
 # Download the actual ZIP file
-ADD https://github.com/awais684/static-zip/raw/master/S3-Static-Website-master.zip site.zip
+ADD https://github.com/awais684/static-zip/raw/refs/heads/master/S3-Static-Website-master.zip
 
 # Unzip, copy contents, and clean up
 RUN unzip site.zip -d site && \
