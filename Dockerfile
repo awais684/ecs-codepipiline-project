@@ -8,11 +8,14 @@ RUN apt update -y && \
 # Set working directory
 WORKDIR /var/www/html
 
-# Download and extract template
-ADD https://colorlib.com/out/download-shapely/ shapely.zip
-RUN unzip shapely.zip -d shapely && \
-    cp -rvf shapely/* . && \
-    rm -rf shapely shapely.zip
+# Download the actual ZIP file
+ADD https://github.com/awais684/static-zip/raw/master/S3-Static-Website-master.zip site.zip
+
+# Unzip, copy contents, and clean up
+RUN unzip site.zip -d site && \
+    cp -rvf site/* . && \
+    rm -rf site site.zip
+
 #RUN echo "Hello DevOps Class" > /var/www/html/index.html
 
 # Expose Apache port
