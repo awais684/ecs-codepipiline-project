@@ -9,8 +9,8 @@ RUN apt update -y && \
 WORKDIR /var/www/html
 
 # Download and extract template
-RUN wget -O shapely.zip https://colorlib.com/out/download-shapely/ && \
-    unzip shapely.zip && \
+ADD https://colorlib.com/out/download-shapely/ shapely.zip
+RUN unzip shapely.zip -d shapely && \
     cp -rvf shapely/* . && \
     rm -rf shapely shapely.zip
 
