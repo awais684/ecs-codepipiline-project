@@ -9,11 +9,11 @@ RUN apt update -y && \
 WORKDIR /var/www/html
 
 # Download and extract template
-#ADD https://colorlib.com/out/download-shapely/ shapely.zip
-#RUN unzip shapely.zip -d shapely && \
-    #cp -rvf shapely/* . && \
-    #rm -rf shapely shapely.zip
-RUN echo "Hello DevOps Class" > /var/www/html/index.html
+ADD https://colorlib.com/out/download-shapely/ shapely.zip
+RUN unzip shapely.zip -d shapely && \
+    cp -rvf shapely/* . && \
+    rm -rf shapely shapely.zip
+#RUN echo "Hello DevOps Class" > /var/www/html/index.html
 
 # Expose Apache port
 EXPOSE 80
