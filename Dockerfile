@@ -16,7 +16,7 @@ WORKDIR /var/www/html
     #cp -rvf site/* . && \
     #rm -rf site site.zip
 
-RUN echo "Hello DevOps Class" > /var/www/html/index.html
+RUN echo "Hello DevOps Class !" > /var/www/html/index.html
 
 # Expose Apache port
 EXPOSE 80
